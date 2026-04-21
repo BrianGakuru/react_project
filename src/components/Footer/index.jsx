@@ -32,7 +32,7 @@ const Footer =()=>{
 
                 {/*Copyright*/}
                 <p className="text-sm text-gray-600 dark:text-gray-400">
-                    {new Date().getFullYear()} Brian. All rights reserved.
+                    ©{new Date().getFullYear()} Brian. All rights reserved.
                 </p>
 
             </div>

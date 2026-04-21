@@ -4,7 +4,7 @@ const projects =[
         title: "House Price Prediction",
         description:"This project involves training a model that is able to make house price prediction using independent varibales",
         type: "Machine learning",
-        link: "https://github.com" // Add your project link here
+        link: "https://github.com/mlopsbootcamp/house-price-predictor" // Add your project link here
     },
     {
         image: "/images/projects/ML.jpg",
