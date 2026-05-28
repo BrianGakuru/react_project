@@ -15,8 +15,8 @@ const projects =[
     },
     {
         image: "/images/projects/DataAnalysis.webp",
-        title: "Exploratory Data Analysis",
-        description:"This project involves training a model that is able to make house price prediction using independent varibales",
+        title: "Crime Dashboard",
+        description:"This project involves Designing and creating a Dashboard that analyses Crime that have been reported leveraging on advanced excel features",
         type: "Data Analysis",
         link: "https://1drv.ms/x/c/e31a1a31919203c3/IQA7p7oE3ANxSKPmEdz33ylXAV5FTqdCKjH-90rskg6Of1E?e=3HhpIB" // Add your project link here
     },
