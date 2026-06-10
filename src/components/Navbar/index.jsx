@@ -10,7 +10,7 @@ const Navbar = () => {
         { label: "Home", target: "hero", type: "scroll" },
         { label: "Work", target: "projects", type: "scroll" },
         { label: "Skills", target: "skills", type: "scroll" },
-        { label: "Testimonials", target: "recommendation", type: "scroll" },
+        { label: "Testimonials", target: "recomendation", type: "scroll" },
         { label: "Contact", target: "contact", type: "scroll" },
         {
             label: "Articles",
