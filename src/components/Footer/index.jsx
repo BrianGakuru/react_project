@@ -5,6 +5,7 @@ const navLinks = [
         { label: "Work", target: "projects", type: "scroll" },
         { label: "Skills", target: "skills", type: "scroll" },
         { label: "Testimonials", target: "recommendation", type: "scroll" },
+        { label: "Testimonials", target: "recomendation", type: "scroll" },
         { label: "Contact", target: "contact", type: "scroll" },
         {
             label: "Articles",
@@ -60,19 +61,19 @@ const Footer =()=>{
                 {/* Social Media Icons */}
                 <div className="flex justify-center gap-10 mb-6">
                     <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity duration-200 inline-flex items-center">
-                    <FaLinkedin size={40} />
+                    <FaLinkedin className='text-blue-500  hover:shadow-xl hover:scale-105' size={40} />
                     </a>
                     <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity duration-200 inline-flex items-center">
-                    <FaFacebook size={40} />
+                    <FaFacebook className='text-blue-500  hover:shadow-xl hover:scale-105' size={40} />
                     </a>
                     <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity duration-200 inline-flex items-center">
-                    <FaGithub size={40} />
+                    <FaGithub className='text-blue-500  hover:shadow-xl hover:scale-105' size={40} />
                     </a>
                     <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity duration-200 inline-flex items-center">
-                    <FaTwitter size={40} />
+                    <FaTwitter className='text-blue-500  hover:shadow-xl hover:scale-105' size={40} />
                     </a>
                     <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity duration-200 inline-flex items-center">
-                    <FaInstagram size={40} />
+                    <FaInstagram className='text-blue-500  hover:shadow-xl hover:scale-105' size={40} />
                     </a>
                 </div>
                 

@@ -1,5 +1,5 @@
 const ScrollDots = () => {
-  const sections = ["hero", "projects", "skills", "recommendations", "contact"];
+  const sections = ["hero", "projects", "skills", "recomendation", "contact"];
 
   return (
     <div className="fixed right-4 top-1/2 transform-translate-y-1/2 flex flex-col gap-3 z-50">
