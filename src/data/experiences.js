@@ -14,6 +14,11 @@ const experiences= [
         comapny: "Naks Bakers",
         years:"January, 2025- May, 2025",
     },
+    {
+        tittle: "Trainer",
+        comapny: "Dekut ITPS",
+        years:"March, 2026- May, 2026",
+    },
 
 
 ]

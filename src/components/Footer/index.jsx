@@ -1,10 +1,17 @@
-const navLinks= [
-    {label: "Home", target:"hero"},
-    {label: "Work", target:"projects"},
-    {label: "Skills", target:"skills"},
-    {label: "Testimonials", target:"recomendation"},
-    {label: "Contact", target:"contact"},
-];
+import { FaLinkedin, FaFacebook, FaGithub, FaTwitter, FaInstagram } from 'react-icons/fa';
+
+const navLinks = [
+        { label: "Home", target: "hero", type: "scroll" },
+        { label: "Work", target: "projects", type: "scroll" },
+        { label: "Skills", target: "skills", type: "scroll" },
+        { label: "Testimonials", target: "recommendation", type: "scroll" },
+        { label: "Contact", target: "contact", type: "scroll" },
+        {
+            label: "Articles",
+            target: "https://brian-blogs-articles.vercel.app/",
+            type: "external",
+        },
+    ];
 
 const Footer =()=>{
     return (
@@ -14,19 +21,62 @@ const Footer =()=>{
                     BRI<span className="text-blue-500">AN</span>
                 </div>
 
-                <div className="flex gap-6 flex-wrap justify-center text-sm">
-                    {navLinks.map(({label, target})=> (
+                <h2 className="text-gray-700 dark: text-gray-300 text-wrap font-bold  text-3xl mb-2 tracking-wide">
+                    <span className="font-light opacity-90"> Mathematician/ Data Scientist/ Analyst</span>
+                </h2>
+
+                {/* Tagline */}
+                <p className="text-gray-600 dark: text-gray-300 text-lg  mt-0 mb-8">
+                    Mathematising the world Excellence in digital creation
+                </p>
+
+                <div className="flex gap-6 flex-wrap justify-center text-sm mb-6">
+                    {navLinks.map(({ label, target, type }) =>
+                    // used to navigate to external links 
+                        type === "external" ? (
                             <a
-                                key={label}
-                                href={`#${target}`}
-                                className="hover:text-blue-500 transition"
+                            key={label}
+                            href={target}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="transition hover:text-blue-500"
                             >
-                                {label}
+                            {label}
                             </a>
-                        ))}
+                    // used to navigate to sections within the page
+                        ) : (
+                            <a
+                            key={label}
+                            href={`#${target}`}
+                            className="transition hover:text-blue-500"
+                            >
+                            {label}
+                            </a>
+                        )
+                    )}
 
                 </div>
+
+                {/* Social Media Icons */}
+                <div className="flex justify-center gap-5 mb-6">
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity duration-200 inline-flex items-center">
+                    <FaLinkedin size={24} />
+                    </a>
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity duration-200 inline-flex items-center">
+                    <FaFacebook size={24} />
+                    </a>
+                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity duration-200 inline-flex items-center">
+                    <FaGithub size={24} />
+                    </a>
+                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity duration-200 inline-flex items-center">
+                    <FaTwitter size={24} />
+                    </a>
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity duration-200 inline-flex items-center">
+                    <FaInstagram size={24} />
+                    </a>
+                </div>
                 
+
                 {/* Divider*/}
                 <hr className="my-6 border-gray-300 dark:border-gray-700"/>
 

@@ -6,13 +6,20 @@ const Navbar = () => {
     const {theme, toggleTheme}= useTheme();
     const [menuOpen, setMenuOpen]= useState(false);
 
-    const navLinks= [
-        {label: "Home", target:"hero"},
-        {label: "Work", target:"projects"},
-        {label: "Skills", target:"skills"},
-        {label: "Testimonials", target:"recomendation"},
-        {label: "Contact", target:"contact"},
+    const navLinks = [
+        { label: "Home", target: "hero", type: "scroll" },
+        { label: "Work", target: "projects", type: "scroll" },
+        { label: "Skills", target: "skills", type: "scroll" },
+        { label: "Testimonials", target: "recommendation", type: "scroll" },
+        { label: "Contact", target: "contact", type: "scroll" },
+        {
+            label: "Articles",
+            target: "https://brian-blogs-articles.vercel.app/",
+            type: "external",
+        },
     ];
+
+    
 
     return (
         <nav className="bg-white dark:bg-gray-900 dark:text-white shadow-md fixed top-0 left-0 right-0 z-50">
@@ -24,15 +31,29 @@ const Navbar = () => {
 
                 {/*Desktop Navigation */}
                 <div className=" hidden md:flex items-center gap-6">
-                  {navLinks.map( ({label, target}) =>(
-                    <a 
-                        key={label}
-                        href={`#${target}`}
-                        className="transition hover:text-blue-500"
-                    >
-                        {label}
-                    </a>
-                  ))}  
+                  {navLinks.map(({ label, target, type }) =>
+                    // used to navigate to external links 
+                        type === "external" ? (
+                            <a
+                            key={label}
+                            href={target}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="transition hover:text-blue-500"
+                            >
+                            {label}
+                            </a>
+                    // used to navigate to sections within the page
+                        ) : (
+                            <a
+                            key={label}
+                            href={`#${target}`}
+                            className="transition hover:text-blue-500"
+                            >
+                            {label}
+                            </a>
+                        )
+                    )}  
                   {/*Light/Dark <pde toggle Button*/}
 
                   <button 
