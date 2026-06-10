@@ -30,7 +30,7 @@ const Footer =()=>{
                     Mathematising the world Excellence in digital creation
                 </p>
 
-                <div className="flex gap-6 flex-wrap justify-center text-sm mb-6">
+                <div className="text-x flex gap-6 flex-wrap justify-center  mb-6">
                     {navLinks.map(({ label, target, type }) =>
                     // used to navigate to external links 
                         type === "external" ? (
@@ -58,21 +58,21 @@ const Footer =()=>{
                 </div>
 
                 {/* Social Media Icons */}
-                <div className="flex justify-center gap-5 mb-6">
+                <div className="flex justify-center gap-10 mb-6">
                     <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity duration-200 inline-flex items-center">
-                    <FaLinkedin size={24} />
+                    <FaLinkedin size={40} />
                     </a>
                     <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity duration-200 inline-flex items-center">
-                    <FaFacebook size={24} />
+                    <FaFacebook size={40} />
                     </a>
                     <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity duration-200 inline-flex items-center">
-                    <FaGithub size={24} />
+                    <FaGithub size={40} />
                     </a>
                     <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity duration-200 inline-flex items-center">
-                    <FaTwitter size={24} />
+                    <FaTwitter size={40} />
                     </a>
                     <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity duration-200 inline-flex items-center">
-                    <FaInstagram size={24} />
+                    <FaInstagram size={40} />
                     </a>
                 </div>
                 
