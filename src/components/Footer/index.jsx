@@ -58,7 +58,7 @@ const Footer =()=>{
                 </div>
 
                 {/* Social Media Icons */}
-                <div className="flex justify-center gap-10 mb-6">
+                <div className="flex justify-center gap-8 mb-6">
                     <a href="https://www.linkedin.com/in/gakuru-brian-ba976a260/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity duration-200 inline-flex items-center">
                     <FaLinkedin className='text-blue-500  hover:shadow-xl hover:scale-105' size={40} />
                     </a>
