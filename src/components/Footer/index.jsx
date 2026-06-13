@@ -56,7 +56,7 @@ const Footer =()=>{
                     )}
 
                 </div>
-
+                    {/* transition hover:text-blue-500 */}
                 {/* Social Media Icons */}
                 <div className="flex justify-center gap-8 mb-6">
                     <a href="https://www.linkedin.com/in/gakuru-brian-ba976a260/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity duration-200 inline-flex items-center">

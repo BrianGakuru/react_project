@@ -1,3 +1,8 @@
+import { useState } from "react";
+import emailjs from "@emailjs/browser";
+
+
+
 // give info of how people can get in touch
 const labelClass =[
     "block",                // Makes label take full width
@@ -28,6 +33,58 @@ const inputClass=[
 ].join(" ");
 
 const ContactSection=()=>{
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        message: ""
+    });
+
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState(null);
+
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+
+        setFormData((prev) => ({
+            ...prev,
+            [name]: value,
+        }));
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        setIsSubmitting(true);
+        setSubmitStatus(null);
+
+        try {
+            await emailjs.send(
+                import.meta.env.VITE_EMAILJS_SERVICE_ID,
+                import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+                {
+                    from_name: formData.name,
+                    from_email: formData.email,
+                    message: formData.message,
+                },
+                import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+            );
+
+            setSubmitStatus("success");
+
+            setFormData({
+                name: "",
+                email: "",
+                message: "",
+            });
+            } catch (error) {
+                console.error("EmailJS Error:", error);
+                setSubmitStatus("error");
+            } finally {
+                setIsSubmitting(false);
+            }
+        }
+
     return(
         <section>
             <section className="min-h-screen py-20 text-center bg-white dark:bg-gray-900">
@@ -42,7 +99,11 @@ const ContactSection=()=>{
             </div>
 
             {/*Contact Form*/}
-            <form className="max-w-3xl mx-auto text-left grid grid-cols-1 gap-6">
+            <form 
+                onSubmit={handleSubmit}
+                className="max-w-3xl mx-auto text-left grid grid-cols-1 gap-6"
+            
+            >
                 <div>
                     <label
                         htmlFor="name"
@@ -53,8 +114,12 @@ const ContactSection=()=>{
                     <input
                         type="text"
                         id="name"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
                         placeholder="Your name"
                         className={inputClass}
+                        required
                     />
                 </div>
                 <div>
@@ -67,8 +132,12 @@ const ContactSection=()=>{
                     <input
                         type="email"
                         id="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
                         placeholder="Your email"
                         className={inputClass}
+                        required
                     />
                 </div>
                 <div>
@@ -81,26 +150,48 @@ const ContactSection=()=>{
                     <textarea
                         rows={5}
                         id="message"
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
                         placeholder="Your message ..."
                         className={inputClass}
-                    >
-
-                    </textarea>
+                        required
+                    />
                 </div>
+
+                {submitStatus === "success" && (
+                    <div className="p-4 rounded-lg bg-green-100 text-green-700">
+                        Message sent successfully! I'll get back to you soon.
+                    </div>
+                )}
+
+                {submitStatus === "error" && (
+                    <div className="p-4 rounded-lg bg-red-100 text-red-700">
+                        Failed to send message. Please try again later.
+                    </div>
+                )}
+
+
+
                 <button
                     type="submit"
+                    disabled={isSubmitting}
                     className={[
-                        "w-full","sm:w-fit",            // Responsive width
-                        "px-6","py-2",                  // Padding
-                        "border","border-blue-500",     //Border and color
-                        "text-blue-500",                 // Text color
-                        "rounded",                      // Rounded corners
-                        "hover:bg-blue-500",            // Hover background
-                        "hover:text-white",              // Hover text color
-                        "transition"                       // Smooth transitions
+                        "w-full", // Responsive width
+                        "sm:w-fit",  // Padding
+                        "px-6",
+                        "py-2",
+                        "border",
+                        "border-blue-500",  //Border and color
+                        "text-blue-500",     //Border and color
+                        "rounded",      // Rounded corners
+                        "hover:bg-blue-500",     // Hover background
+                        "hover:text-white", // Hover text color
+                        "transition",           // Smooth transitions
+                        isSubmitting ? "opacity-50 cursor-not-allowed" : ""
                     ].join(" ")}
                 >
-                    Send Message
+                    {isSubmitting ? "Sending..." : "Send Message"}
                 </button>
             </form>
         </section>
