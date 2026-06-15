@@ -1,41 +1,38 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ThemeProvider from "./context/ThemeProvider";
 import Navbar from "./components/Navbar";
 import ScrollDots from "./components/ScrollDots";
-import Hero from "./components/Hero";
-import ProjectSection from "./components/ProjectSection";
-import SkillExperienceSection from "./components/SkillExperienceSection";
-import RecomendationsSection from "./components/RecomendationsSection";
-import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
+import Home from "./components/Home"; // Your single-page sections
+import AboutPage from "./pages"; // Your new separate route
+
 import "./App.css";
 
-const App =()=>{
-  return(
+const App = () => {
+  return (
     <ThemeProvider>
-      <div className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
-      <h1 className="text-red-500 text-5xl">
-  
-</h1>
-        <Navbar/>
-        <ScrollDots />
-        <div id="hero"><Hero /></div>
-        <div id="projects"><ProjectSection /></div>
-        <div id="skills"><SkillExperienceSection /></div>
-        <div id="recomendation"><RecomendationsSection /></div>
-        <div id="contact"><ContactSection /></div>
-        <Footer />
-      </div>
+      <Router>
+        <div className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white min-h-screen">
+          <Navbar />
+          {/* ScrollDots might only make sense on the Home page, but we keep it layout-global here */}
+          <ScrollDots />
+          
+          <main>
+            <Routes>
+              {/* Route 1: The main landing page with all your sections */}
+              <Route path="/" element={<Home />} />
+              
+              {/* Route 2: The completely separate page */}
+              <Route path="/about" element={<AboutPage />} /> {/* Add this line */}
 
+            </Routes>
+          </main>
+
+          <Footer />
+        </div>
+      </Router>
     </ThemeProvider>
   );  
 };
 
 export default App;
-
-// export default function App() {
-//   return (
-//     <div className="min-h-screen bg-red-500 text-white text-4xl">
-//       TEST SCREEN
-//     </div>
-//   );
-// }
