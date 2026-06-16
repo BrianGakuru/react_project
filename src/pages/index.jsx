@@ -13,7 +13,7 @@ const AboutPage = () => {
       degree: "B.Sc. in Mathematics / Data Science Focus",
       institution: "Your University Name",
       period: "2022 - 2026",
-      image: "/images/about/math_uni.jpg", // Update with your actual image path
+      image: "/images/about/Grad.jpeg", // Update with your actual image path
       description: "Specialized in advanced statistics, linear algebra, and computational mathematics. Developed foundational skills in machine learning algorithms and predictive modeling."
     }
   ];
