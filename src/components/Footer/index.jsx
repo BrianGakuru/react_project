@@ -68,12 +68,12 @@ const Footer =()=>{
                     <a href="https://github.com/BrianGakuru" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity duration-200 inline-flex items-center">
                     <FaGithub className='  hover:shadow-xl hover:scale-105' size={40} />
                     </a>
-                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity duration-200 inline-flex items-center">
+                    {/* <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity duration-200 inline-flex items-center">
                     <FaTwitter className='  hover:shadow-xl hover:scale-105' size={40} />
                     </a>
                     <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity duration-200 inline-flex items-center">
                     <FaInstagram className='  hover:shadow-xl hover:scale-105' size={40} />
-                    </a>
+                    </a> */}
                 </div>
                 
 

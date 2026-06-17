@@ -13,7 +13,7 @@ const App = () => {
     <ThemeProvider>
       <Router>
         <div className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white min-h-screen">
-          <Navbar />
+         
           {/* ScrollDots might only make sense on the Home page, but we keep it layout-global here */}
           <ScrollDots />
           

@@ -3,6 +3,7 @@ import ProjectSection from "../ProjectSection";
 import SkillExperienceSection from "../SkillExperienceSection";
 import RecomendationsSection from "../RecomendationsSection";
 import ContactSection from "../ContactSection";
+import Navbar from "../Navbar";
 
 
 
@@ -10,6 +11,7 @@ import ContactSection from "../ContactSection";
 const Home = () => {
   return (
     <>
+      <Navbar/>
       <div id="hero"><Hero /></div>
       <div id="projects"><ProjectSection /></div>
       <div id="skills"><SkillExperienceSection /></div>

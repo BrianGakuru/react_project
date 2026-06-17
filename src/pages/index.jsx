@@ -11,20 +11,29 @@ const AboutPage = () => {
   const education = [
     {
       degree: "B.Sc. in Mathematics / Data Science Focus",
-      institution: "Your University Name",
-      period: "2022 - 2026",
+      institution: "DEKUT",
+      period: "2021 - 2024",
       image: "/images/about/Grad.jpeg", // Update with your actual image path
       description: "Specialized in advanced statistics, linear algebra, and computational mathematics. Developed foundational skills in machine learning algorithms and predictive modeling."
+    },
+    {
+      degree: "Post Graduate Diploma in Technichal/vocational Education",
+      institution: "DEKUT",
+      period: "May 2025 - May 2026",
+      image: "/images/about/Grad.jpeg", // Update with your actual image path
+      description: "Specialized in training practices furthering my skills to deliver in a class setup in Mathematics and ICT"
     }
+
+
   ];
 
   const career = [
     {
-      role: "MLOps Engineer / Data Scientist",
-      company: "Company/Organization Name",
+      role: "Graduate Assistant ",
+      company: "DEKUT",
       period: "2025 - Present",
       image: "/images/about/mlops_work.jpg", // Update with your actual image path
-      description: "Building automated machine learning pipelines, deploying models into production environments, and creating data dashboards using Python and Streamlit."
+      description: "Helped in facilitation of practical Lab sessions for computational mathematics, Python and Machine Learning. Also helped in facilitation of CATS"
     },
     {
       role: "Data Analyst Intern",
