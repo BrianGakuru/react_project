@@ -1,4 +1,4 @@
-import { FaLinkedin, FaFacebook, FaGithub, FaTwitter, FaInstagram } from 'react-icons/fa';
+import { FaLinkedin, FaFacebook, FaGithub, FaTwitter, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 
 const navLinks = [
         { label: "Home", target: "hero", type: "scroll" },
@@ -68,10 +68,10 @@ const Footer =()=>{
                     <a href="https://github.com/BrianGakuru" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity duration-200 inline-flex items-center">
                     <FaGithub className='  hover:shadow-xl hover:scale-105' size={40} />
                     </a>
-                    {/* <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity duration-200 inline-flex items-center">
-                    <FaTwitter className='  hover:shadow-xl hover:scale-105' size={40} />
+                    <a href="https://wa.me/254112234477" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity duration-200 inline-flex items-center">
+                    <FaWhatsapp className='  hover:shadow-xl hover:scale-105' size={40} />
                     </a>
-                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity duration-200 inline-flex items-center">
+                    {/* <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity duration-200 inline-flex items-center">
                     <FaInstagram className='  hover:shadow-xl hover:scale-105' size={40} />
                     </a> */}
                 </div>
